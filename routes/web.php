@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\RSAController;
+use App\Livewire\AddExpenseGroup;
 use App\Livewire\ExpenseGroup;
 use App\Livewire\GroupAdd;
 use Illuminate\Support\Facades\Route;
@@ -41,7 +42,7 @@ Route::middleware([
         return view('dashboard.AddExpense');
     })->name('addExpense');
     Route::get('/{groupId}/showExpense',ExpenseGroup::class )->name('ExpenseGroup');
-
+    Route::get('/{groupId}/AddExpenseGroup',AddExpenseGroup::class )->name('AddExpenseGroup');
 });
 
 Route::get('/RSA',[RSAController::class,'RSA']);
